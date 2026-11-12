@@ -1,0 +1,34 @@
+fpga:
+  board: EDGE Z7-10
+  device: TBD                       # exact Zynq part to be identified (Stage 0)
+  part: TBD                         # e.g. xc7z010clg400c (verify from board)
+  clock_mhz: 100
+  data_width: 8                     # INT8
+  accumulator_width: 32
+  interface: axi_dma
+  hls:
+    modules:
+      - conv2d
+      - conv1x1
+      - relu
+      - maxpool
+      - residual_add
+      - upsample
+      - heatmap_head
+      - buffer_controller
+      - weight_loader
+      - accelerator_top
+    directives:
+      - PIPELINE
+      - DATAFLOW
+      - ARRAY_PARTITION
+      - BIND_STORAGE
+  vivado:
+    synthesis: TBD
+    implementation: TBD
+    timing: TBD
+  resources:
+    lut: TBD
+    ff: TBD
+    dsp: TBD
+    bram: TBD

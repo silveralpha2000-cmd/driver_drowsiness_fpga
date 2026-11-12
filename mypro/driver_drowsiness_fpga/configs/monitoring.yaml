@@ -1,0 +1,16 @@
+monitoring:
+  states: [NORMAL, DROWSY, DISTRACTED, LOW_CONFIDENCE]
+  confidence_threshold: 0.5
+  temporal_window: 15               # frames
+  hysteresis: true
+  drowsiness:
+    enabled: true
+    signals: [downward_head_posture, head_nodding, repeated_head_droop]
+    duration_frames: 30
+  distraction:
+    enabled: true
+    signals: [looking_left, looking_right, looking_downward, head_turned_away]
+    duration_frames: 30
+  warning:
+    visual: true
+    audible: false

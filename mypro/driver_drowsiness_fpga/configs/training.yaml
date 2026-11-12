@@ -1,0 +1,18 @@
+training:
+  device: auto                      # cuda | cpu | auto
+  epochs: 100
+  batch_size: 16
+  optimizer: adamw                  # adam | adamw
+  learning_rate: 1e-3
+  weight_decay: 1e-4
+  lr_scheduler: cosine              # cosine | step | none
+  warmup_epochs: 5
+  early_stopping: true
+  patience: 10
+  checkpoint_dir: results/training
+  best_model_file: results/training/best_model.pth
+  save_every: 10
+  resume_from: null
+  loss: mse                         # heatmap MSE
+  log_every: 50
+  history_csv: results/training/history.csv

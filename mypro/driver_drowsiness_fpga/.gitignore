@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+var/
+sdist/
+dist-info/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# PyTorch / models
+*.pt
+*.pth
+*.onnx
+*.ckpt
+
+# Data
+*.zip
+*.tar.gz
+datasets/coco/
+!datasets/.gitkeep
+
+# Results / reports
+results/**/*
+!results/.gitkeep
+hls/reports/*
+vivado/*.log
+vivado/*.jou
+vivado/.Xil/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,28 @@
+dataset:
+  name: COCO2017
+  root: G:\\mypro\\driver_drowsiness_fpga\\datasets\\coco
+  images_dir: G:\\mypro\\driver_drowsiness_fpga\\datasets\\coco\\val2017
+  annotations_file: G:\\mypro\\driver_drowsiness_fpga\\datasets\\coco\\annotations\\person_keypoints_val2017.json
+  map_only_seven_keypoints: true
+  coco_to_7kp:
+    0: 0   # nose
+    1: 1   # left eye
+    2: 2   # right eye
+    3: 3   # left ear
+    4: 4   # right ear
+    5: 5   # left shoulder
+    6: 6   # right shoulder
+  input_size: [256, 192]            # [H, W]
+  heatmap_size: [64, 48]            # [H, W]
+  gaussian_sigma: 2.0
+  visibility_handling: ignore_unlabeled
+  train_val_split: 0.9
+  seed: 42
+
+  # Sample validity threshold (Stage 4 redesign)
+  keypoint_threshold:
+    min_total_keypoints: 5          # min total visible keypoints for a valid sample
+    min_facial_keypoints: 3         # min of {nose, left_eye, right_eye, left_ear, right_ear}
+    min_upperbody_keypoints: 2      # min of {left_shoulder, right_shoulder} = both shoulders
+    facial_indices: [0, 1, 2, 3, 4] # Nose, Left Eye, Right Eye, Left Ear, Right Ear
+    upperbody_indices: [5, 6]       # Left Shoulder, Right Shoulder
